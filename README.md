@@ -10,7 +10,6 @@ A Java Spring Boot application with a React front end that lets you upload an im
 - Enter desired output size in KB.
 - Server compresses to JPEG with iterative quality search.
 - Returns compressed file as direct download.
-- CORS enabled for the `/compress` endpoint to support cross-origin frontend clients.
 
 ## Tech Stack
 
