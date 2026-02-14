@@ -54,9 +54,21 @@ body {
   align-items: flex-start;
 }
 
+.header-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 h1 {
   margin: 0;
   font-size: 1.7rem;
+}
+
+h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.3rem;
 }
 
 p {
@@ -109,15 +121,133 @@ button {
   cursor: wait;
 }
 
-.theme-toggle {
+.theme-toggle,
+.history-btn {
   padding: 9px 12px;
   background: transparent;
   border: 1px solid var(--input-border);
   color: var(--text);
+  font-size: 0.9rem;
+}
+
+.theme-toggle:hover,
+.history-btn:hover {
+  background: var(--input-bg);
 }
 
 .error {
   color: var(--danger);
   margin-top: 12px;
   margin-bottom: 0;
+}
+
+.history-section {
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.history-empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 20px;
+  background: var(--input-bg);
+  border-radius: 8px;
+  margin: 0;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  gap: 12px;
+}
+
+.history-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-filename {
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+  margin-bottom: 6px;
+}
+
+.history-details {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.history-size {
+  font-weight: 500;
+}
+
+.history-date {
+  font-size: 0.8rem;
+}
+
+.delete-btn {
+  padding: 6px 10px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-buttons {
+    width: 100%;
+  }
+
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+
+  .history-details {
+    width: 100%;
+    flex-direction: column;
+    gap: 4px;
+  }
 }

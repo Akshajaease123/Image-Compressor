@@ -1,0 +1,21 @@
+# Build directories
+target/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+tmpclaude-*
+
+# Maven
+.m2/
+
+# Logs
+*.log
